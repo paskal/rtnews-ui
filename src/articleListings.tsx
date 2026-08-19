@@ -505,7 +505,7 @@ export class Listing extends BaseListing<ListingProps, ListingState> {
 							style={{
 								display: this.state.addFormExpanded ? "" : "none",
 							}}
-							onAdd={async url => {
+							onAdd={url => {
 								retry(async () => {
 									await sleep(2000);
 									await this.update(true);
@@ -515,7 +515,7 @@ export class Listing extends BaseListing<ListingProps, ListingState> {
 									);
 									if (article === null)
 										throw new Error("Added article is not found");
-								}, 5);
+								}, 5).catch(e => console.error(e));
 							}}
 						/>
 					</div>

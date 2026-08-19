@@ -307,7 +307,7 @@ export default class AddArticleForm extends Component<Props, State> {
 	}
 	protected async onSubmit() {
 		this.setState({ posting: true });
-		const url = this.state.manualLink;
+		const url = this.state.manual ? this.state.manualLink : this.state.autolink;
 		try {
 			if (!this.state.manual) {
 				await addArticle(this.state.autolink);
