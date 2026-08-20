@@ -1,0 +1,32 @@
+name: build
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+
+      - name: set up node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: install dependencies
+        run: npm ci
+
+      - name: test
+        run: ./node_modules/.bin/jest --verbose
+
+      - name: build
+        run: ./node_modules/.bin/webpack --mode production

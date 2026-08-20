@@ -1,5 +1,7 @@
 # rtnews-ui - Клиентская сторона для новой версии news.radio-t.com
 
+[![build](https://github.com/radio-t/rtnews-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/radio-t/rtnews-ui/actions/workflows/ci.yml)
+
 Полное описание задачи можно [подсмотреть здесь](http://p.umputun.com/2015/11/26/vsiem-mirom-dlia-obshchiei-polzy/)
 
 ----
